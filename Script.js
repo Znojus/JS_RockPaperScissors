@@ -1,42 +1,3 @@
-console.log("Hello World!");
-
-//Create a function getComputerChoice that randomly returns "Rock" "Paper" or "Scissors":
-//1. Generate a random number between 1 and 9 and put it in a variable
-//2. IF this variable is below 4, return rock, if it's below 7, return paper, else, return scissors
-
-//In a function getHumanChoice, Prompt the user for an answer, and return the answer in LOWER CASE
-
-//Create two variables: humanScore and computerScore to track the score in the global scope
-//and initialize them with value of 0
-
-
-//Create a function playRound with two parameters: humanChoice and computerChoice
-//In the function check these conditions:
-//If computerChoice equals humanChoice - print "It's a Draw!"
-
-//2. If computerChoice is rock and humanChoice is paper - print "You win! Paper beats Rock."
-//Increment humanScore by 1
-
-//3. If computerChoice is rock and humanChoice is scissors - print "You lose! Rock beats Scissors."
-//Increment computerScore by 1
-
-//4. If computerChoice is paper and humanChoice is rock - print "You lose! Paper beats Rock."
-//Increment computerScore by 1
-
-//5. If computerChoice is paper and humanChoice is scissors - print "You win! Scissors beat Paper."
-//Increment humanScore by 1;
-
-//6. If computerChoice is scissors and humanChoice is rock - print "You win! Rock beats Scissors."
-//Increment humanScore by 1;
-
-//7. If computerChoice is scissors and humanChoice is paper - print "You lose! Scissors beat Paper."
-//Increment computerScore by 1
-
-
-//create a function named playGame
-//move the variables and playRound function inside the playGame function and call it 5 times
-//Check the scores, print them, and call the winner
-
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 9) + 1;
     if(randomNumber < 4){
@@ -89,11 +50,9 @@ function playGame(){
         }
     }
 
-    for(let i = 0; i < 5; i++){
-        playRound(getHumanChoice(), getComputerChoice());
-    }
+    
 
-    if(computerScore === humanScore){
+    if (computerScore === humanScore){
         console.log("It's a Draw! Final score: ");
     }
     else if (computerScore > humanScore){
