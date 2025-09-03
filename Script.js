@@ -25,16 +25,24 @@ btn1.setAttribute("class", "rock")
 btn1.textContent = "Rock";
 
 const btn2 = document.createElement("button");
-btn1.textContent = "Paper";
-btn1.setAttribute("class", "paper")
+btn2.textContent = "Paper";
+btn2.setAttribute("class", "paper")
 
 const btn3 = document.createElement("button");
-btn1.textContent = "Scissors";
-btn1.setAttribute("class", "scissors");
+btn3.textContent = "Scissors";
+btn3.setAttribute("class", "scissors");
 
 btn1.addEventListener("click", () => playRound("rock", getComputerChoice()));
-
 btnDiv.appendChild(btn1);
+
+btn2.addEventListener("click", () => playRound("paper", getComputerChoice()));
+btnDiv.appendChild(btn2);
+
+btn3.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+btnDiv.appendChild(btn3);
+
+const scoreboard = document.createElement("p");
+btnDiv.appendChild(scoreboard);
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -64,4 +72,6 @@ function playRound(humanChoice, computerChoice) {
         console.log("You lose! Scissors beat Paper.");
         computerScore++;
     }
+
+    scoreboard.textContent = `Your score: ${humanScore} - Robot's score: ${computerScore}`;
 }
