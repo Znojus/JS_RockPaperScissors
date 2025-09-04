@@ -51,6 +51,9 @@ btnDiv.appendChild(btn3);
 
 
 function playRound(humanChoice, computerChoice) {
+    //reset the result style
+    resultMessage.setAttribute("style", "color: black; font-size: large; height: 122px; padding-top: 50px;"); //158px vs  146px
+
     if (humanChoice === computerChoice) {
         resultMessage.textContent = "It's a Draw!";
     }
@@ -79,5 +82,22 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
     }
 
-    scoreboard.textContent = `Your score: ${humanScore} - Robot's score: ${computerScore}`;
+    scoreboard.textContent = `Your score: ${humanScore} - Computer's score: ${computerScore}`;
+
+    checkWinner();
+}
+
+function checkWinner() {
+    if (humanScore === 5) {
+        resultMessage.textContent = "You've won!";
+        resultMessage.setAttribute("style", "color: green; font-size: 50px;");
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if (computerScore === 5) {
+        resultMessage.textContent = "You've lost... Try again!";
+        resultMessage.setAttribute("style", "color: red; font-size: 50px;");
+        humanScore = 0;
+        computerScore = 0;
+    }
 }
