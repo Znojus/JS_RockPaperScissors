@@ -16,6 +16,14 @@ function getHumanChoice(){
     return humanChoice.toLowerCase();
 }
 
+const scoreboard = document.createElement("p");
+document.body.appendChild(scoreboard);
+document.body.appendChild(document.createElement("br"));
+
+const resultMessage = document.createElement("p");
+resultMessage.textContent = "Make your choice: ";
+document.body.prepend(resultMessage);
+
 let humanScore = 0, computerScore = 0;
 
 const btnDiv = document.querySelector(".button-container");
@@ -41,11 +49,6 @@ btnDiv.appendChild(btn2);
 btn3.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 btnDiv.appendChild(btn3);
 
-const scoreboard = document.createElement("p");
-btnDiv.appendChild(scoreboard);
-
-const resultMessage = document.createElement("p");
-btnDiv.appendChild(resultMessage);
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
